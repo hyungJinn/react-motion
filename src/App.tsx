@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Gestures from "./sample/Gestures";
+import MotionValue from "./sample/MotionValue";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 function App() {
   return (
     <Wrapper>
-      <Gestures />
+      <MotionValue />
     </Wrapper>
   );
 }
