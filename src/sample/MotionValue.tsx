@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useEffect } from "react";
 
 const Box = styled(motion.div)`
   width: 200px;
@@ -12,7 +13,8 @@ const Box = styled(motion.div)`
 
 function MotionValue() {
   const x = useMotionValue(0);
-  console.log(x);
-  return <Box style={{ x }} drag="x" dragSnapToOrigin />;
+  const potato = useTransform(x, [-800, 0, 800], [2, 1, 0.1]);
+
+  return <Box style={{ x, scale: potato }} drag="x" dragSnapToOrigin />;
 }
 export default MotionValue;
