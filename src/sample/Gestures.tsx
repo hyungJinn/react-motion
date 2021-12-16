@@ -1,5 +1,17 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+
+const BiggerBox = styled.div`
+  width: 600px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+`;
 
 const Box = styled(motion.div)`
   width: 200px;
@@ -12,18 +24,22 @@ const Box = styled(motion.div)`
 const boxVariants = {
   hover: { scale: 1.5, rotateZ: 90 },
   click: { scale: 0.8, borderRadius: "100px" },
-  drag: { backgroundColor: "rgb(52, 152, 219)", transition: { duration: 10 } },
 };
 
 function Gestures() {
+  const biggerBoxRef = useRef<HTMLDivElement>(null);
   return (
-    <Box
-      drag
-      variants={boxVariants}
-      whileHover="hover"
-      whileDrag="drag"
-      whileTap="click"
-    />
+    <BiggerBox ref={biggerBoxRef}>
+      <Box
+        drag
+        dragSnapToOrigin
+        dragElastic={0.5}
+        dragConstraints={biggerBoxRef}
+        variants={boxVariants}
+        whileHover="hover"
+        whileTap="click"
+      />
+    </BiggerBox>
   );
 }
 export default Gestures;
