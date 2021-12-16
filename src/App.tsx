@@ -1,8 +1,7 @@
-import styled from "styled-components";
-import MotionValue from "./sample/MotionValue";
+import SvgAni from "./sample/SvgAni";
 
 function App() {
-  return <MotionValue />;
+  return <SvgAni />;
 }
 
 export default App;
