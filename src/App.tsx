@@ -1,7 +1,7 @@
-import SvgAni from "./sample/SvgAni";
+import AniPres from "./sample/AniPres";
 
 function App() {
-  return <SvgAni />;
+  return <AniPres />;
 }
 
 export default App;
