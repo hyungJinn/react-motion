@@ -1,7 +1,7 @@
-import AniLayout from "./sample/AniLayout";
+import AniGrid from "./sample/AniGrid";
 
 function App() {
-  return <AniLayout />;
+  return <AniGrid />;
 }
 
 export default App;
