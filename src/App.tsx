@@ -1,7 +1,7 @@
-import AniSlider from "./sample/AniSlider";
+import AniLayout from "./sample/AniLayout";
 
 function App() {
-  return <AniSlider />;
+  return <AniLayout />;
 }
 
 export default App;
